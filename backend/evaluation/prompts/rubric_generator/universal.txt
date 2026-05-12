@@ -1,0 +1,40 @@
+Generate a generic evaluation rubric for {domain} tasks.
+
+## Dataset Overview
+- **Total tasks**: {total_tasks}
+- **Task types**: {task_types}
+- **Common tools**: {common_tools}
+- **Average complexity**: {avg_complexity}
+- **Tool diversity**: {tool_diversity}
+
+## Available Tools ({num_tools} tools)
+- **Input modalities**: {input_modalities}
+- **Output modalities**: {output_modalities}
+- **Total modalities**: {num_input_modalities} input types, {num_output_modalities} output types
+
+## Your Task
+Generate {num_dimensions} key evaluation dimensions that are applicable to most tasks in this domain.
+
+For each dimension:
+1. Provide a clear theme name
+2. Write a brief description explaining why this dimension matters
+3. List 3-5 specific, actionable evaluation tips
+4. Keep tips measurable and specific
+
+Focus on dimensions that:
+- Apply to most {domain} tasks
+- Distinguish good from bad solutions
+- Are measurable and specific
+- Cover different aspects (correctness, efficiency, robustness, etc.)
+- Consider tool usage and type compatibility
+
+Output format:
+Dimension 1:
+Theme: [Name]
+Description: [Brief explanation]
+- Tip: [criterion 1]
+- Tip: [criterion 2]
+- Tip: [criterion 3]
+...
+
+[Continue for all dimensions]

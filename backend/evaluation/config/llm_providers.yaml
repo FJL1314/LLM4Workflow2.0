@@ -1,0 +1,96 @@
+# LLM Providers Configuration
+
+providers:
+  # OpenAI
+  openai:
+    api_key: ""
+    base_url: 
+    default_model: gpt-5.4-mini
+    options:
+      timeout: 180
+      max_retries: 3
+
+  # Azure OpenAI
+  azure:
+    api_key: ${AZURE_API_KEY}
+    base_url: ${AZURE_ENDPOINT}/openai/deployments/${DEPLOYMENT_NAME}
+    default_model: gpt-4
+    options:
+      api_version: 2024-02-15-preview
+      timeout: 60
+
+  # Anthropic Claude
+  anthropic:
+    api_key: ${ANTHROPIC_API_KEY}
+    default_model: claude-3-5-sonnet-20241022
+    options:
+      timeout: 60
+      max_retries: 3
+
+  # Google Gemini
+  gemini:
+    api_key: 
+    default_model: gemini-3-flash-preview
+    base_url: 
+    options:
+      timeout: 60
+      thinking_level: null  # null, "low", "medium", or "high" (for thinking models)
+
+  qwen:
+    api_key: 
+    base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    default_model: qwen-plus
+    options:
+      timeout: 60
+
+  zhipu:
+    api_key: 
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    default_model: glm-4.7
+    options:
+      timeout: 60
+
+  moonshot:
+    api_key: 
+    base_url: https://api.moonshot.cn/v1
+    default_model: moonshot-v1-8k
+    options:
+      timeout: 60
+
+  deepseek:
+    api_key: 
+    base_url: https://api.deepseek.com
+    default_model: deepseek-chat
+    options:
+      timeout: 60
+
+  baichuan:
+    api_key:
+    base_url: https://api.baichuan-ai.com/v1
+    default_model: Baichuan2-Turbo
+    options:
+      timeout: 60
+
+  minimax:
+    api_key: 
+    base_url: https://api.minimax.chat/v1
+    default_model: abab6.5s-chat
+    options:
+      timeout: 60
+
+defaults:
+  generic_rubric:
+    provider: openai
+    model: gpt-5.4-mini
+
+  draft_rubric:
+    provider: openai
+    model: gpt-5.4-mini
+
+  evaluation_rubric:
+    provider: qwen
+    model: qwen-plus
+
+  refinement:
+    provider: qwen
+    model: qwen-plus

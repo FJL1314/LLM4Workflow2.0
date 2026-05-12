@@ -1,0 +1,17 @@
+.workflow {
+  width: 100%;
+}
+
+.prompt-card-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+  color: #fff;
+}
+
+body {
+  font-family: "Times New Roman", serif;
+}

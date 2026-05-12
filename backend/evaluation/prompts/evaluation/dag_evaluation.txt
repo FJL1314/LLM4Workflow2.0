@@ -1,0 +1,56 @@
+You are a professional DAG task planning evaluation expert. Please evaluate the rationality of the DAG task structure based on the given evaluation criteria Rubric.
+
+{rubric_description}
+
+{dag_description}
+
+## Tool Usage Validity Verification
+
+{tool_validation}
+
+## Evaluation Requirements
+
+For each evaluation dimension, please provide:
+1.Score: A score from 1 to 5, where 1 is the lowest and 5 is the highest.
+2. Reasoning: A brief explanation of why this score is given.
+
+### Scoring Reference
+5 Excellent: Fully satisfies the requirements of this dimension and performs exceptionally well.
+4 Good: Satisfies the requirements well, with only minor room for improvement.
+3 Fair: Basically satisfies the requirements, but there is clear room for improvement.
+2 Poor: Does not satisfy the requirements well and has significant problems.
+1 Very Poor: Completely fails to satisfy the requirements and has serious problems
+
+## Output Format
+
+Please strictly output the result in the following JSON format. Do not include any additional text.
+
+```json
+{{
+  "evaluations": [
+    {{
+      "dimension": "{dimension_1}",
+      "score": 4.5,
+      "reasoning": "Brief reasoning，avoid quotation marks and special characters"
+    }},
+    {{
+      "dimension": "{dimension_2}",
+      "score": 3.5,
+      "reasoning": "Brief reasoning，avoid quotation marks and special characters"
+    }}
+  ]
+}}
+```
+
+Important:
+
+Each dimension must be assigned a score between 1 and 5. Decimal scores such as 3.5 or 4.2 are allowed.
+All {num_dimensions} evaluation dimensions must be covered. Do not omit any dimension.
+The reasoning should be very brief, no more than 20 words, and directly explain the score.
+Do not use double quotation marks, single quotation marks, or other special characters in the reasoning field.
+Output only JSON. Do not include any additional explanation.
+Format: The reasoning for each dimension should be concise, for example: "Complete structure and clear logic".
+
+Note: Even if some dimensions receive similar scores, each dimension must still be evaluated and output separately.
+
+Please start the evaluation:

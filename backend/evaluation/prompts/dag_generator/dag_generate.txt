@@ -1,0 +1,42 @@
+You are a professional DAG workflow planning expert. Please generate a valid, complete, and executable workflow DAG based on the given user request, task steps, and available tools.
+
+## Input
+
+### user_request:
+{user_request}
+
+### task_steps:
+{task_steps}
+
+### available_tools:
+{available_tools}
+
+## Objective
+
+Please complete the following tasks, but do not output any intermediate reasoning process:
+
+1. Analyze the final goal of the user_request.
+2. Identify the key steps required to complete the task based on task_steps.
+3. Select the most suitable tool from available_tools for each step.
+4. Construct task nodes and their dependency relationships to form a DAG.
+5. Output only the JSON result in the specified format.
+
+## Output Format
+
+Please strictly follow the JSON format below and do not include any additional text:
+
+{{
+  "task_nodes": [
+    {{
+      "task": "corresponding tool name for the task",
+      "arguments": ["argument1", "argument2"]
+    }}
+  ],
+  "task_links": [
+    {{
+      "source": "source task tool name",
+      "target": "target task tool name"
+    }}
+  ],
+  "user_request": "original user request"
+}}

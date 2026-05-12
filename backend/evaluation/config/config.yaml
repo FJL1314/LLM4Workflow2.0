@@ -1,0 +1,51 @@
+# Auto-Rubric DAG System Configuration
+
+data:
+  raw_data_path: data/raw/taskbench_multimedia_dag.json
+  processed_data_dir: data/processed
+  simulation_dir: data/simulations
+
+rubric:
+  generic:
+    min_score: 0
+    max_score: 5
+    num_dimensions: 6
+
+  draft:
+    min_score: 0
+    max_score: 5
+    num_dimensions: 5
+
+  iterative:
+    enable_categorization: true
+    categories_number: 5
+    query_specific_generate_number: 2
+
+simulation:
+  max_concurrent: 5
+
+  timeout: 120
+
+  enable_cache: true
+
+evaluation:
+  generic_weight: 0.3
+  specialized_weight: 0.7
+
+  validation:
+    interpretability: true
+    discriminatory_power: true
+    stability: true
+    orthogonality: true
+
+
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR
+  file: logs/auto_rubric.log
+  rotation: 100 MB
+
+
+cache:
+  enable: true
+  dir: .cache
+  llm_ttl: 86400
